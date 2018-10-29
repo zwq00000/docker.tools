@@ -1,31 +1,37 @@
 #!/bin/bash
+declare -a scripts=("go" "git" "node" "nodejs" "npm" "yarn" "python" "dotnet")
 
-
-# $1:linktarget
-# $2 source sh
+##********************
+## check script link 
+## $1 sourch script
+## $2 link target
+##********************
 function checkLink(){
     source=$1
-    target=$2
-    if [ -f $target ]; then
-        echo "File $target exists."
+    LINK=$2
+    
+    if [ -h "$LINK" ]; then
+        echo "link $LINK exists."
     else
-        echo "link $target to $source"
-        sudo ln $source $target -s
+        echo "link $LINK to $source"
+        sudo ln $source $LINK -s
     fi
 }
 
-checkLink "go.sh" "/usr/bin/go"
-
-checkLink "yarn.sh" "/usr/bin/yarn"
-
-checkLink "node.sh" "/usr/bin/node"
-checkLink "npm.sh" "/usr/bin/npm"
-checkLink "npx.sh" "/usr/bin/npx"
-
-checkLink "python.sh" "/usr/bin/python"
-
-checkLink "git.sh" "/usr/bin/git"
-
-checkLink "dotnet.sh" "/usr/bin/dotnet"
-
-
+if [ $# -eq 0 ]; then
+    echo "Summary: install docker script "
+    echo "Example:"
+    echo "install.sh go"
+    echo ${scripts[*]}
+else
+    
+    for i in ${scripts[@]}
+    do
+        if [ $1 = ${i} ]; then
+            source="${i}.sh"
+            target="/usr/bin/${i}"
+            checkLink $source $target
+        fi
+    done
+    
+fi
