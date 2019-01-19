@@ -1,5 +1,5 @@
 #!/bin/bash
-declare -a scripts=("go" "git" "node" "nodejs" "npm" "yarn" "python" "dotnet")
+declare -a scripts=("go" "git" "node" "nodejs" "npm" "yarn" "python" "dotnet" "ruby")
 
 ##********************
 ## check script link 
@@ -28,7 +28,7 @@ else
     for i in ${scripts[@]}
     do
         if [ $1 = ${i} ]; then
-            source="${i}.sh"
+            source="${PWD}/${i}.sh"
             target="/usr/bin/${i}"
             checkLink $source $target
         fi
