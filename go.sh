@@ -1,3 +1,4 @@
 #!/bin/bash
-echo "use docker image golan"
-docker run -it --rm -u $UID --userns=host -v `pwd`:`pwd` -w `pwd` golang go $*
+echo "Start golang in Docker Container ..."
+docker run -it --rm --name golang -u $UID --userns=host -v $HOME/go:/go -v $HOME/.cache/go-build:/.cache/go-build -v `pwd`:`pwd` -w `pwd` golang go $*
+echo "Exit golang Docker Container"
