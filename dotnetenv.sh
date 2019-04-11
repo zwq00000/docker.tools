@@ -2,7 +2,7 @@
 ###################
 ##  dotnet sdk env
 ###################
-echo "use docker image microsoft/dotnet:2.1-sdk"
+echo "use docker image microsoft/dotnet:2.2-sdk"
 
 docker run  --rm -it --name dotnetenv \
 -u $UID --userns=host \
@@ -10,4 +10,4 @@ docker run  --rm -it --name dotnetenv \
 -network host \
 -e HOME=/tmp \
 -v `pwd`:`pwd` -w `pwd` \
-microsoft/dotnet:2.1-sdk /bin/bash $*
+microsoft/dotnet:2.2-sdk /bin/bash $*

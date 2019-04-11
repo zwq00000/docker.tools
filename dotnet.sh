@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "use docker image microsoft/dotnet:2.1-sdk"
+echo "use docker image microsoft/dotnet:2.2-sdk"
 
 docker run  --rm -u $UID --userns=host \
 -e HOME=/tmp \
