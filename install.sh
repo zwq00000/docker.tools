@@ -1,37 +1,29 @@
 #!/bin/bash
-declare -a scripts=("go" "git" "node" "nodejs" "npm" "yarn" "python" "dotnet","dotnetenv","ruby")
-echo "Install docker tools "
-##********************
-## check script link 
-## $1 sourch script
-## $2 link target
-##********************
-function checkLink(){
-    source=$1
-    LINK=$2
-    
-    if [ -h "$LINK" ]; then
-        echo "link $LINK exists."
-    else
-        echo "link $LINK to $source"
-        sudo ln $source $LINK -s
-    fi
-}
 
-if [ $# -eq 0 ]; then
-    echo "Summary: install docker script "
-    echo "Example:"
-    echo "install.sh go"
-    echo ${scripts[*]}
-else
-    
-    for i in ${scripts[@]}
-    do
-        if [ $1 = ${i} ]; then
-            source="${PWD}/${i}.sh"
-            target="/usr/bin/${i}"
-            checkLink $source $target
-        fi
-    done
-    
-fi
+source_path=$(dirname $(readlink -f $0))
+
+alias dt.dotnetenv='${source_path}'/dotnetenv.sh
+
+alias dt.dotnet='${source_path}'/dotnet.sh
+
+alias dt.git='${source_path}'/git.sh
+
+alias dt.go='${source_path}'/go.sh
+
+alias dt.nodeenv='${source_path}'/nodeenv.sh
+
+alias dt.nodejs='${source_path}'/nodejs.sh
+
+alias dt.node='${source_path}'/node.sh
+
+alias dt.npm='${source_path}'/npm.sh
+
+alias dt.npx='${source_path}'/npx.sh
+
+alias dt.pythonenv='${source_path}'/pythonenv.sh
+
+alias dt.python='${source_path}'/python.sh
+
+alias dt.ruby='${source_path}'/ruby.sh
+
+alias dt.yarn='${source_path}'/yarn.sh

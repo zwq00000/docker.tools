@@ -3,11 +3,22 @@
 ##  dotnet sdk env
 ###################
 echo "use docker image microsoft/dotnet:2.2-sdk"
+cur_dateTime=`date +%m%d%H%m`
+echo $cur_dateTime
 
-docker run  --rm -it --name dotnetenv \
+SHARE_VALUME=dotnet_home_for_$USER
+# Create User home Volume
+docker volume create $SHARE_VALUME
+
+docker run  --rm --userns=host \
+-e HOME=/home/dotnet \
+-v $SHARE_VALUME:/home/dotnet/ \
+ microsoft/dotnet:2.2-sdk chown -R $UID:$UID /home/dotnet/
+
+docker run  --rm -it --name dotnetenv_$cur_dateTime \
 -u $UID --userns=host \
--p 5000:5000 \
--network host \
--e HOME=/tmp \
+--network host \
+-e HOME=/home/dotnet \
+-v $SHARE_VALUME:/home/dotnet \
 -v `pwd`:`pwd` -w `pwd` \
 microsoft/dotnet:2.2-sdk /bin/bash $*
