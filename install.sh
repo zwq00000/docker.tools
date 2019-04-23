@@ -2,28 +2,32 @@
 
 source_path=$(dirname $(readlink -f $0))
 
-alias dt.dotnetenv='${source_path}'/dotnetenv.sh
+cd `{source_path}`
 
-alias dt.dotnet='${source_path}'/dotnet.sh
+alias dt.dotnetenv=`pwd`/dotnetenv.sh
 
-alias dt.git='${source_path}'/git.sh
+alias dt.dotnet=`pwd`/dotnet.sh
 
-alias dt.go='${source_path}'/go.sh
+alias dt.git=`pwd`/git.sh
 
-alias dt.nodeenv='${source_path}'/nodeenv.sh
+alias dt.go=`pwd`/go.sh
 
-alias dt.nodejs='${source_path}'/nodejs.sh
+alias dt.nodeenv=`pwd`/nodeenv.sh
 
-alias dt.node='${source_path}'/node.sh
+alias dt.nodejs=`pwd`/nodejs.sh
 
-alias dt.npm='${source_path}'/npm.sh
+alias dt.node=`pwd`/node.sh
 
-alias dt.npx='${source_path}'/npx.sh
+alias dt.npm=`pwd`/npm.sh
 
-alias dt.pythonenv='${source_path}'/pythonenv.sh
+alias dt.npx=`pwd`/npx.sh
 
-alias dt.python='${source_path}'/python.sh
+alias dt.pythonenv=`pwd`/pythonenv.sh
 
-alias dt.ruby='${source_path}'/ruby.sh
+alias dt.python=`pwd`/python.sh
 
-alias dt.yarn='${source_path}'/yarn.sh
+alias dt.ruby=`pwd`/ruby.sh
+
+alias dt.yarn=`pwd`/yarn.sh
+
+source ~/.bash_profile
