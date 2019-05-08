@@ -1,33 +1,18 @@
 #!/bin/bash
 
 source_path=$(dirname $(readlink -f $0))
+cd $source_path
 
-cd `{source_path}`
-
-alias dt.dotnetenv=`pwd`/dotnetenv.sh
-
-alias dt.dotnet=`pwd`/dotnet.sh
-
-alias dt.git=`pwd`/git.sh
-
-alias dt.go=`pwd`/go.sh
-
-alias dt.nodeenv=`pwd`/nodeenv.sh
-
-alias dt.nodejs=`pwd`/nodejs.sh
-
-alias dt.node=`pwd`/node.sh
-
-alias dt.npm=`pwd`/npm.sh
-
-alias dt.npx=`pwd`/npx.sh
-
-alias dt.pythonenv=`pwd`/pythonenv.sh
-
-alias dt.python=`pwd`/python.sh
-
-alias dt.ruby=`pwd`/ruby.sh
-
-alias dt.yarn=`pwd`/yarn.sh
-
-source ~/.bash_profile
+ln -s -f `pwd`/dotnetenv.sh ~/bin/dotnetenv 
+ln -s -f `pwd`/dotnet.sh ~/bin/dotnet 
+ln -s -f `pwd`/git.sh ~/bin/git 
+ln -s -f `pwd`/go.sh ~/bin/go 
+ln -s -f `pwd`/nodeenv.sh ~/bin/nodeenv 
+ln -s -f `pwd`/nodejs.sh ~/bin/nodejs 
+ln -s -f `pwd`/node.sh ~/bin/node 
+ln -s -f `pwd`/npm.sh ~/bin/npm 
+ln -s -f `pwd`/npx.sh ~/bin/npx 
+ln -s -f `pwd`/pythonenv.sh ~/bin/pythonenv 
+ln -s -f `pwd`/python.sh ~/bin/python 
+ln -s -f `pwd`/ruby.sh ~/bin/ruby 
+ln -s -f `pwd`/yarn.sh ~/bin/yarn 
