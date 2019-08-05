@@ -3,6 +3,7 @@
 source_path=$(dirname $(readlink -f $0))
 cd $source_path
 
+# Link shell file to ~/bin
 ln -s -f `pwd`/dotnetenv.sh ~/bin/dotnetenv 
 ln -s -f `pwd`/dotnet.sh ~/bin/dotnet 
 ln -s -f `pwd`/git.sh ~/bin/git 

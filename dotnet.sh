@@ -15,6 +15,7 @@ docker run  --rm --userns=host \
 
 docker run  --rm -u $UID --userns=host \
 -e HOME=/home/dotnet \
+--network host \
 -v $SHARE_VALUME:/home/dotnet/ \
 -v `pwd`:`pwd` -w `pwd` \
  microsoft/dotnet:2.2-sdk dotnet $*

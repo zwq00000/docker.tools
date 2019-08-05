@@ -12,6 +12,7 @@ docker volume create $SHARE_VALUME
 docker run -it --rm -u $UID --userns=host \
 -e PATH=$localpath \
 --network=host \
+-v /etc/localtime:/etc/localtime:ro \
 -v $SHARE_VALUME:/home/node/ \
 -v `pwd`:`pwd` -w `pwd` library/node:8.12.0 /bin/bash $*
 
