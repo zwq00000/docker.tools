@@ -17,3 +17,4 @@ ln -s -f `pwd`/pythonenv.sh ~/bin/pythonenv
 ln -s -f `pwd`/python.sh ~/bin/python 
 ln -s -f `pwd`/ruby.sh ~/bin/ruby 
 ln -s -f `pwd`/yarn.sh ~/bin/yarn 
+ln -s -f `pwd`/php-cli.sh ~/bin/php-cli
