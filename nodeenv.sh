@@ -14,5 +14,6 @@ docker run -it --rm -u $UID --userns=host \
 --network=host \
 -v /etc/localtime:/etc/localtime:ro \
 -v $SHARE_VALUME:/home/node/ \
+-v /home/$USER/.npmrc:/home/node/.npmrc \
 -v `pwd`:`pwd` -w `pwd` library/node:8.12.0 /bin/bash $*
 
