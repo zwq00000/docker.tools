@@ -1,5 +1,8 @@
 #!/bin/bash
-echo "Use docker image library/node:8.12.0"
+
+imageName=library/node:12
+
+echo "Use docker image ${imageName}"
 
 localpath=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/node/.npm/local/bin
 SHARE_VALUME=npm_home_for_$USER
@@ -11,6 +14,5 @@ docker run -it --rm -u $UID --userns=host \
 --network=host \
 -v /etc/localtime:/etc/localtime:ro \
 -v $SHARE_VALUME:/home/node/ \
--v /home/$USER/.npmrc:/home/node/npmrc \
--v `pwd`:`pwd` -w `pwd` library/node:8.12.0 $*
+-v `pwd`:`pwd` -w `pwd` $imageName $*
 

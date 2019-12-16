@@ -2,7 +2,8 @@
 ###################
 ##  dotnet sdk env
 ###################
-echo "use docker image microsoft/dotnet:2.2-sdk"
+imageName=microsoft/dotnet:2.2-sdk
+echo "use docker image ${imageName}"
 cur_dateTime=`date +%m%d%H%m`
 echo $cur_dateTime
 
@@ -21,4 +22,4 @@ docker run  --rm -it --name dotnetenv_$cur_dateTime \
 -e HOME=/home/dotnet \
 -v $SHARE_VALUME:/home/dotnet \
 -v `pwd`:`pwd` -w `pwd` \
-microsoft/dotnet:2.2-sdk /bin/bash $*
+$imageName /bin/bash $*
