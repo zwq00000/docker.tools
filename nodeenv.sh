@@ -6,8 +6,8 @@ echo "Use docker image ${imageName}"
 #first runtime use npm config set prefix "$HOME/.npm/global"
 # and 'npm config set registry https://registry.npm.taobao.org'
 
-echo 'first time  exec "npm config set prefix $HOME/.npm/global \ '
-echo 'npm config set registry https://registry.npm.taobao.org'
+echo -e 'first time  exec \n\t npm config set prefix $HOME/.npm/global  '
+echo  -e '\t npm config set registry https://registry.npm.taobao.org'
 
 localpath=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/node/.npm/local/bin
 SHARE_VALUME=npm_home_for_$USER
