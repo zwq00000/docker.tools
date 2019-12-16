@@ -12,14 +12,14 @@ SHARE_VALUME=dotnet_home_for_$USER
 docker volume create $SHARE_VALUME
 
 docker run  --rm --userns=host \
--e HOME=/home/dotnet \
--v $SHARE_VALUME:/home/dotnet/ \
- microsoft/dotnet:2.2-sdk chown -R $UID:$UID /home/dotnet/
+-e HOME=$HOME \
+-v $SHARE_VALUME:$HOME/ \
+ $imageName chown -R $UID:$UID $HOME/
 
 docker run  --rm -it --name dotnetenv_$cur_dateTime \
--u $UID --userns=host \
+-u $UID:$UID --userns=host \
 --network host \
--e HOME=/home/dotnet \
--v $SHARE_VALUME:/home/dotnet \
+-e HOME=$HOME \
+-v $SHARE_VALUME:$HOME \
 -v `pwd`:`pwd` -w `pwd` \
 $imageName /bin/bash $*

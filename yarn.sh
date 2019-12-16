@@ -7,7 +7,7 @@ localpath=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/nod
 SHARE_VALUME=shared_npm_for_$USER
 docker volume create $SHARE_VALUME
 
-docker run -it --rm -u $UID --userns=host \
+docker run -it --rm -u $UID:$UID --userns=host \
 -e PATH=$localpath \
 --network=host \
 -v /etc/localtime:/etc/localtime:ro \

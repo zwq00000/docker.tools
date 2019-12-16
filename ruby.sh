@@ -2,7 +2,7 @@
 imageName=library/ruby
 echo "Start Ruby in Docker Container Use image ${imageName} ..."
 
-docker run -it --rm -u $UID --userns=host \
+docker run -it --rm -u $UID:$UID --userns=host \
 --network=host \
 -v `pwd`:`pwd` -w `pwd` \
 $imageName /bin/bash

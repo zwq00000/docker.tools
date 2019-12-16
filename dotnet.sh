@@ -12,7 +12,7 @@ docker run  --rm --userns=host \
 -v $SHARE_VALUME:/home/dotnet/ \
  microsoft/dotnet:2.2-sdk chown -R $UID:$UID /home/dotnet/
 
-docker run  --rm -u $UID --userns=host \
+docker run  --rm -u $UID:$UID --userns=host \
 -e HOME=/home/dotnet \
 --network host \
 -v $SHARE_VALUME:/home/dotnet/ \

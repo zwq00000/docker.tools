@@ -3,7 +3,7 @@
 imageName=library/node:12
 echo "Start ${imageName} env"
 
-docker run  --rm -it -u $UID --userns=host \
+docker run  --rm -it -u $UID:$UID --userns=host \
 -e HOME=/home/dotnet \
 --network host \
 -v `pwd`:`pwd` -w `pwd` \
