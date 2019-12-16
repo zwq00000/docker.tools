@@ -12,10 +12,11 @@ echo "Use Shared Volume $SHARE_VALUME"
 
 docker volume create $SHARE_VALUME
 
-docker run -it --rm --userns=host \
+docker run -it --rm -u $UID --userns=host \
 -e PATH=$localpath \
---network host  \
--v $SHARE_VALUME:/home/node/ \
+--network=host \
+-v /etc/localtime:/etc/localtime:ro \
+-v /etc/passwd:/etc/passwd:ro \
+-v $SHARE_VALUME:$HOME \
 -v `pwd`:`pwd` -w `pwd` \
 $imageName npm $*
-

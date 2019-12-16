@@ -13,6 +13,7 @@ docker run -it --rm -u $UID --userns=host \
 -e PATH=$localpath \
 --network=host \
 -v /etc/localtime:/etc/localtime:ro \
--v $SHARE_VALUME:/home/node/ \
+-v /etc/passwd:/etc/passwd:ro \
+-v $SHARE_VALUME:$HOME \
 -v `pwd`:`pwd` -w `pwd` $imageName $*
 
