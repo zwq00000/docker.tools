@@ -1,5 +1,7 @@
 #!/bin/bash
-echo "Use docker image library/node:8.12.0"
+
+imageName=library/node:12
+echo "Use docker image ${imageName}"
 
 #first runtime use npm config set profix "/home/node/.npm/global"
 # and 'npm config set registry https://registry.npm.taobao.org'
@@ -15,5 +17,5 @@ docker run -it --rm -u $UID --userns=host \
 -v /etc/localtime:/etc/localtime:ro \
 -v $SHARE_VALUME:/home/node/ \
 -v /home/$USER/.npmrc:/home/node/.npmrc \
--v `pwd`:`pwd` -w `pwd` library/node:8.12.0 /bin/bash $*
+-v `pwd`:`pwd` -w `pwd` $imageName /bin/bash $*
 
