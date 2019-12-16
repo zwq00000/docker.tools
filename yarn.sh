@@ -12,6 +12,7 @@ docker run -it --rm -u $UID --userns=host \
 --network=host \
 -v /etc/localtime:/etc/localtime:ro \
 -v /etc/passwd:/etc/passwd:ro \
+-v /etc/group:/etc/group:ro \
 -v $SHARE_VALUME:$HOME \
 -v `pwd`:`pwd` -w `pwd` \
 $imageName yarn $*
