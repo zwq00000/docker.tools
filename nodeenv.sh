@@ -9,7 +9,7 @@ echo "Use docker image ${imageName}"
 echo -e 'first time  exec \n\t npm config set prefix $HOME/.npm/global'
 echo  -e '\t npm config set registry https://registry.npm.taobao.org'
 
-localpath=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/$HOME/.npm/global/bin
+localpath=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/.npm/global/bin
 SHARE_VALUME=npm_home_for_$USER
 # Create User Profile Volume
 docker volume create $SHARE_VALUME
