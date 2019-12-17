@@ -2,7 +2,7 @@
 ## user ~/.npmrc and ~/.npm folder
 imageName=library/node:12
 echo "Entry docker container ${imageName}"
-localpath=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/node/.npm/local/bin
+localpath=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/$HOME/.npm/global/bin
 
 SHARE_VALUME=shared_npm_for_$USER
 docker volume create $SHARE_VALUME

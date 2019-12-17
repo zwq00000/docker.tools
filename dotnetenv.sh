@@ -20,6 +20,9 @@ docker run  --rm -it --name dotnetenv_$cur_dateTime \
 -u $UID:$UID --userns=host \
 --network host \
 -e HOME=$HOME \
+-v /etc/localtime:/etc/localtime:ro \
+-v /etc/passwd:/etc/passwd:ro \
+-v /etc/group:/etc/group:ro \
 -v $SHARE_VALUME:$HOME \
 -v `pwd`:`pwd` -w `pwd` \
 $imageName /bin/bash $*
