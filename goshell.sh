@@ -13,7 +13,7 @@ start()
         -v /etc/passwd:/etc/passwd:ro \
         -v /etc/group:/etc/group:ro \
         -v $SHARE_VALUME:$HOME/.cache \
-        -v `pwd`:`pwd` -w `pwd` $imageName  $*
+        -v `pwd`:`pwd` -w `pwd` $imageName  /bin/bash $*
 }
 
 init()
@@ -34,3 +34,5 @@ else
 fi
 
 echo "Exit ${imageName} Docker shell"
+
+
