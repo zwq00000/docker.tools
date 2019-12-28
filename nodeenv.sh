@@ -40,5 +40,5 @@ if  [ "$1" = "init" ];then
     echo 'init ${imageName} env '
     init
 else
-    start
+    start $*
 fi

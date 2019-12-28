@@ -1,6 +1,6 @@
 #!/bin/bash
 imageName=golang
-echo "Start ${imageName} in Docker shell ..."
+echo "Start ${imageName} in Docker shell"
 
 SHARE_VALUME=shared_go_cache
 
@@ -13,12 +13,13 @@ start()
         -v /etc/passwd:/etc/passwd:ro \
         -v /etc/group:/etc/group:ro \
         -v $SHARE_VALUME:$HOME/.cache \
-        -v `pwd`:`pwd` -w `pwd` $imageName  $*
+        -v `pwd`:`pwd` -w `pwd` \
+        $imageName  go  $*
 }
 
 init()
 {
-    docker volume create shared_go_cache
+    docker volume create SHARE_VALUME
 
     docker run  --rm --userns=host \
     -e HOME=$HOME \
@@ -30,7 +31,7 @@ if  [ "$1" = "init" ];then
     echo 'init ${imageName} env '
     init
 else
-    start
+    start $*
 fi
 
-echo "Exit ${imageName} Docker shell"
+echo "Exit ${imageName} Docker"

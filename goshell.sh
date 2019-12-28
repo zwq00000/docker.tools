@@ -13,12 +13,13 @@ start()
         -v /etc/passwd:/etc/passwd:ro \
         -v /etc/group:/etc/group:ro \
         -v $SHARE_VALUME:$HOME/.cache \
-        -v `pwd`:`pwd` -w `pwd` $imageName  /bin/bash $*
+        -v `pwd`:`pwd` -w `pwd` \
+        $imageName  /bin/bash $*
 }
 
 init()
 {
-    docker volume create shared_go_cache
+    docker volume create SHARE_VALUME
 
     docker run  --rm --userns=host \
     -e HOME=$HOME \
@@ -30,7 +31,7 @@ if  [ "$1" = "init" ];then
     echo 'init ${imageName} env '
     init
 else
-    start
+    start $*
 fi
 
 echo "Exit ${imageName} Docker shell"

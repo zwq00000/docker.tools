@@ -10,7 +10,7 @@ docker volume create $SHARE_VALUME
 
 echo "Use Shared Volume $SHARE_VALUME"
 
-docker volume create $SHARE_VALUME
+# docker volume create $SHARE_VALUME
 
 docker run -it --rm -u $UID:$UID --userns=host \
 -e PATH=$localpath \
