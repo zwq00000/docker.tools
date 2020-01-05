@@ -13,6 +13,3 @@ ln -s -f `pwd`/goshell.sh $BIN_PATH/goshell
 
 echo  ln -s -f `pwd`/gofmt.sh $BIN_PATH/gofmt
 ln -s -f `pwd`/gofmt.sh $BIN_PATH/gofmt
-
-echo  ln -s -f `pwd`/govendor.sh $BIN_PATH/govendor
-ln -s -f `pwd`/govendor.sh $BIN_PATH/govendor
