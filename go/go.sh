@@ -7,7 +7,7 @@ gopath=$HOME/go
 localpath=/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$gopath/bin
 
 
- docker run -it --rm \
+ docker run -i --rm \
         -u $UID:$UID --userns=host \
         --network=host \
         -e GOCACHE=$gopath/go-build \
