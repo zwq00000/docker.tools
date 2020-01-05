@@ -11,6 +11,7 @@ start()
     docker run -it --rm --name golang \
         -u $UID:$UID --userns=host \
         --network=host \
+        -e GOCACHE=$gopath/go-build \
         -e GOPATH=$gopath \
         -e PATH=$localpath \
         -v /etc/localtime:/etc/localtime:ro \

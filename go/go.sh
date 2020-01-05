@@ -9,9 +9,12 @@ localpath=/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/us
 
 start()
 {
-    docker run -it --rm --name golang \
+    docker run -it --rm \
         -u $UID:$UID --userns=host \
         --network=host \
+        -e GOCACHE=$gopath/go-build \
+        -e GOPATH=$gopath \
+        -e PATH=$localpath \        
         -v /etc/localtime:/etc/localtime:ro \
         -v /etc/passwd:/etc/passwd:ro \
         -v /etc/group:/etc/group:ro \
