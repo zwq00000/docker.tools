@@ -1,3 +1,4 @@
 # ignore start with '_'
 _*
 .npm
+.devcontainer

@@ -2,7 +2,7 @@
 ###################
 ##  dotnet sdk env
 ###################
-imageName=microsoft/dotnet:2.2-sdk
+imageName=mcr.microsoft.com/dotnet/core/sdk:3.1
 echo "use docker image ${imageName}"
 cur_dateTime=`date +%m%d%H%m`
 echo $cur_dateTime
