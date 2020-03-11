@@ -5,8 +5,14 @@ cd $source_path
 
 BIN_PATH=$1
 
-echo ln -s -f `pwd`/dotnetenv.sh $BIN_PATH/dotnetenv 
-ln -s -f `pwd`/dotnetenv.sh $BIN_PATH/dotnetenv 
+echo ln -s -f `pwd`/dotnetshell.sh $BIN_PATH/dotnetshell3 
+ln -s -f `pwd`/dotnetshell3.sh $BIN_PATH/dotnetshell 
 
-echo ln -s -f `pwd`/dotnet.sh $BIN_PATH/dotnet 
-ln -s -f `pwd`/dotnet.sh $BIN_PATH/dotnet 
+echo ln -s -f `pwd`/dotnetshell2.2.sh $BIN_PATH/dotnetshell2.2 
+ln -s -f `pwd`/dotnetshell2.2.sh $BIN_PATH/dotnetshell2.2 
+
+echo ln -s -f `pwd`/dotnetshell3.sh $BIN_PATH/dotnetshell3 
+ln -s -f `pwd`/dotnetshell3.sh $BIN_PATH/dotnetshell3 
+
+echo ln -s -f `pwd`/dotnet3.sh $BIN_PATH/dotnet 
+ln -s -f `pwd`/dotnet3.sh $BIN_PATH/dotnet 
