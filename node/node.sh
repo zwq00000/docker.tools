@@ -9,7 +9,7 @@ SHARE_VALUME=npm_home_for_$USER
 # Create User Profile Volume
 docker volume create $SHARE_VALUME
 
-docker run -it --rm -u $UID:$UID --userns=host \
+docker run -i --rm -u $UID:$UID --userns=host \
 -e PATH=$localpath \
 --network=host \
 -v /etc/localtime:/etc/localtime:ro \
