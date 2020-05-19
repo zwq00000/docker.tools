@@ -16,3 +16,14 @@ ln -s -f `pwd`/dotnetshell3.sh $BIN_PATH/dotnetshell3
 
 echo ln -s -f `pwd`/dotnet3.sh $BIN_PATH/dotnet 
 ln -s -f `pwd`/dotnet3.sh $BIN_PATH/dotnet 
+
+echo create share volume
+
+SHARE_VOLUME=dotnet_home_for_$USER
+# Create User home Volume
+docker volume create $SHARE_VOLUME
+
+docker run  --rm --userns=host \
+-e HOME=$HOME \
+-v $SHARE_VOLUME:$HOME/ \
+ $imageName chown -R $UID:$UID $HOME/

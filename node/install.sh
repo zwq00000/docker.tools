@@ -23,3 +23,7 @@ ln -s -f `pwd`/npx.sh $BIN_PATH/npx
 
 echo ln -s -f `pwd`/npm-runtime.sh $BIN_PATH/npm-runtime
 ln -s -f `pwd`/npm-runtime.sh $BIN_PATH/npm-runtime
+
+nodeenv init
+npm config set prefix $HOME/.npm/global
+npm config set registry https://registry.npm.taobao.org

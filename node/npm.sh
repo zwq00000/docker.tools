@@ -1,7 +1,7 @@
 #!/bin/bash
 
 imageName=library/node:12
-echo "use docker image ${imageName}"
+echo "use docker image ${imageName} export port 8080"
 
 localpath=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/.npm/global/bin
 SHARE_VALUME=npm_home_for_$USER

@@ -2,9 +2,9 @@
 imageName=mcr.microsoft.com/dotnet/core/sdk:3.1
 echo "use docker image ${imageName}"
 
-SHARE_VALUME=dotnet_home_for_$USER
+SHARE_VOLUME=dotnet_home_for_$USER
 # Create User home Volume
-docker volume create $SHARE_VALUME
+docker volume create $SHARE_VOLUME
 
 docker run  --rm -it --name dotnetenv_$cur_dateTime \
 -u $UID:$UID --userns=host \
@@ -13,6 +13,6 @@ docker run  --rm -it --name dotnetenv_$cur_dateTime \
 -v /etc/localtime:/etc/localtime:ro \
 -v /etc/passwd:/etc/passwd:ro \
 -v /etc/group:/etc/group:ro \
--v $SHARE_VALUME:$HOME \
+-v $SHARE_VOLUME:$HOME \
 -v `pwd`:`pwd` -w `pwd` \
 $imageName dotnet $*
