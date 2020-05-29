@@ -14,7 +14,7 @@ SHARE_VALUME=npm_home_for_$USER
 
 start()
 {
-    docker run -it --rm -u $UID:$UID --userns=host \
+    docker run -i --rm -u $UID:$UID --userns=host \
     -e PATH=$localpath \
     --network=host \
     -v /etc/localtime:/etc/localtime:ro \
