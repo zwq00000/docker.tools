@@ -16,7 +16,7 @@ docker run  --rm -it --name dotnetenv_$cur_dateTime \
 -v /etc/localtime:/etc/localtime:ro \
 -v /etc/passwd:/etc/passwd:ro \
 -v /etc/group:/etc/group:ro \
--v  /etc/localtime:/etc/localtime:ro \ 
+-v  /etc/localtime:/etc/localtime:ro \
 -v $SHARE_VALUME:$HOME \
 -v `pwd`:`pwd` -w `pwd` \
 $imageName /bin/bash $*

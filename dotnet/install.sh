@@ -14,8 +14,8 @@ ln -s -f `pwd`/dotnetshell2.2.sh $BIN_PATH/dotnetshell2.2
 echo ln -s -f `pwd`/dotnetshell3.sh $BIN_PATH/dotnetshell3 
 ln -s -f `pwd`/dotnetshell3.sh $BIN_PATH/dotnetshell3 
 
-echo ln -s -f `pwd`/dotnet3.sh $BIN_PATH/dotnet 
-ln -s -f `pwd`/dotnet3.sh $BIN_PATH/dotnet 
+echo ln -s -f `pwd`/dotnet.sh $BIN_PATH/dotnet 
+ln -s -f `pwd`/dotnet.sh $BIN_PATH/dotnet 
 
 # init docker container and mount volume
 imageName=mcr.microsoft.com/dotnet/core/sdk:3.1
