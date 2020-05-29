@@ -3,8 +3,6 @@ imageName=microsoft/dotnet:2.2-sdk
 echo "use docker image ${imageName}"
 
 SHARE_VALUME=dotnet_home_for_$USER
-# Create User home Volume
-docker volume create $SHARE_VALUME
 
 docker run  --rm -it --name dotnetenv_$cur_dateTime \
 -u $UID:$UID --userns=host \
@@ -13,6 +11,7 @@ docker run  --rm -it --name dotnetenv_$cur_dateTime \
 -v /etc/localtime:/etc/localtime:ro \
 -v /etc/passwd:/etc/passwd:ro \
 -v /etc/group:/etc/group:ro \
+-v  /etc/localtime:/etc/localtime:ro \ 
 -v $SHARE_VALUME:$HOME \
 -v `pwd`:`pwd` -w `pwd` \
 $imageName dotnet $*

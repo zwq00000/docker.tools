@@ -11,11 +11,6 @@ SHARE_VALUME=dotnet_home_for_$USER
 # Create User home Volume
 docker volume create $SHARE_VALUME
 
-docker run  --rm --userns=host \
--e HOME=$HOME \
--v $SHARE_VALUME:$HOME/ \
- $imageName chown -R $UID:$UID $HOME/
-
 docker run  --rm -it --name dotnetenv_$cur_dateTime \
 -u $UID:$UID --userns=host \
 --network host \
@@ -23,6 +18,7 @@ docker run  --rm -it --name dotnetenv_$cur_dateTime \
 -v /etc/localtime:/etc/localtime:ro \
 -v /etc/passwd:/etc/passwd:ro \
 -v /etc/group:/etc/group:ro \
+-v  /etc/localtime:/etc/localtime:ro \ 
 -v $SHARE_VALUME:$HOME \
 -v `pwd`:`pwd` -w `pwd` \
 $imageName /bin/bash $*
