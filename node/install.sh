@@ -18,6 +18,9 @@ ln -s -f `pwd`/node.sh $BIN_PATH/node
 echo ln -s -f `pwd`/npm.sh $BIN_PATH/npm
 ln -s -f `pwd`/npm.sh $BIN_PATH/npm
 
+echo ln -s -f `pwd`/yarn.sh $BIN_PATH/yarn
+ln -s -f `pwd`/yarn.sh $BIN_PATH/yarn
+
 echo ln -s -f `pwd`/npx.sh $BIN_PATH/npx
 ln -s -f `pwd`/npx.sh $BIN_PATH/npx
 

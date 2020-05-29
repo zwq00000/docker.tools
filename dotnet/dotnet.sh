@@ -1,6 +1,5 @@
 #!/bin/bash
 imageName=mcr.microsoft.com/dotnet/core/sdk:3.1
-## echo "use docker image ${imageName}"
 
 SHARE_VALUME=dotnet_home_for_$USER
 

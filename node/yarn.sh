@@ -16,5 +16,3 @@ docker run -it --rm -u $UID:$UID --userns=host \
 -v $SHARE_VALUME:$HOME \
 -v `pwd`:`pwd` -w `pwd` \
 $imageName yarn $*
-
-echo "Exit docker container"

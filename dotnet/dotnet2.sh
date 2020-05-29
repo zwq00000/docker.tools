@@ -4,7 +4,7 @@ echo "use docker image ${imageName}"
 
 SHARE_VALUME=dotnet_home_for_$USER
 
-docker run  --rm -it --name dotnetenv_$cur_dateTime \
+docker run  --rm -t --name dotnetenv_$cur_dateTime \
 -u $UID:$UID --userns=host \
 --network host \
 -e HOME=$HOME \

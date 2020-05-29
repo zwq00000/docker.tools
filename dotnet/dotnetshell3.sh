@@ -8,8 +8,6 @@ cur_dateTime=`date +%m%d%H%m`
 echo $cur_dateTime
 
 SHARE_VOLUME=dotnet_home_for_$USER
-# Create User home Volume
-docker volume create $SHARE_VOLUME
 
 docker run  --rm -it --name dotnetenv_$cur_dateTime \
 -u $UID:$UID --userns=host \
