@@ -17,5 +17,6 @@ docker run -it --rm --name golang_fmt \
     -v /etc/passwd:/etc/passwd:ro \
     -v /etc/group:/etc/group:ro \
     -v $SHARE_VALUME:$HOME/go \
+    -v $ROOT_VALUME:/root \
     -v `pwd`:`pwd` -w `pwd` \
     $imageName  gofmt  $*
