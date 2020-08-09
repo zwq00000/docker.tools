@@ -1,8 +1,8 @@
 #!/bin/bash
-echo "Use docker image library/python"
+imageName=library/python
+echo "Start ${imageName} in Docker shell"
 
-docker run -it --rm -u $UID --userns=host \
---network=host \
--v `pwd`:`pwd` -w `pwd` \
-library/python  \
-library/python python $*
+docker run -it --rm --name python_3 \
+-v "$PWD":/usr/src/myapp \
+-w /usr/src/myapp \
+$imageName  $*

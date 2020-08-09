@@ -1,4 +1,10 @@
 #!/bin/bash
-echo "Start Ruby in Docker Container ..."
-docker run -it --rm --name ruby -u $UID --userns=host -v `pwd`:`pwd` -w `pwd` library/ruby /bin/bash
+imageName=library/ruby
+echo "Start Ruby in Docker Container Use image ${imageName} ..."
+
+docker run -it --rm -u $UID:$UID --userns=host \
+--network=host \
+-v `pwd`:`pwd` -w `pwd` \
+$imageName /bin/bash
+
 echo "Exit Ruby Docker Container"
