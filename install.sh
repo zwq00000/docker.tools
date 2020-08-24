@@ -19,7 +19,12 @@ if [ -d "/snap/bin" ] ; then
     BIN_PATH="/snap/bin"
 fi
 
-if  [ "$1" = "" ];then
+if [ "$BIN_PATH" = ""];then
+    echo "make ~/bin"
+    mkdir ~/bin
+fi
+
+if [ "$1" = "" ];then
     echo "Usage: install [options] "
     echo "  Install docker tool  options "
     echo "  options = go,node,dotnet "
