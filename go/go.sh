@@ -9,8 +9,10 @@ localpath=/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/us
 docker run -i --rm \
         -u $UID:$UID --userns=host \
         --network=host \
+        -e GOENV=$gopath/env \
         -e GOCACHE=$gopath/go-build \
         -e GOPATH=$gopath \
+        -e GOPROXY=https://mirrors.aliyun.com/goproxy/,direct \
         -e PATH=$localpath \
         -v /etc/localtime:/etc/localtime:ro \
         -v /etc/passwd:/etc/passwd:ro \

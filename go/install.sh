@@ -9,7 +9,7 @@ init()
     docker volume create $SHARE_VALUME
     docker volume create $ROOT_VALUME
 
-    docker run --rm \
+    docker run --rm -t \
         -e HOME=$HOME \
         -v /etc/passwd:/etc/passwd:ro \
         -v /etc/group:/etc/group:ro \
@@ -20,17 +20,7 @@ init()
             ls $HOME -la & \
             /bin/bash
 
-    # docker run -it --rm --name golang \
-    #     -u $UID:$UID --userns=host \
-    #     --network=host \
-    #     -e GOCACHE=$gopath/go-build \
-    #     -e GOPATH=$gopath \
-    #     -e PATH=$localpath \
-    #     -v /etc/localtime:/etc/localtime:ro \
-    #     -v /etc/passwd:/etc/passwd:ro \
-    #     -v /etc/group:/etc/group:ro \
-    #     -v $SHARE_VALUME:$HOME/go \
-    #     -v `pwd`:`pwd` -w `pwd` $imageName   go get -u github.com/kardianos/govendor
+    #go get -u github.com/kardianos/govendor
 }
 
 source_path=$(dirname $(readlink -f $0))

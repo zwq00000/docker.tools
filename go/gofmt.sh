@@ -7,11 +7,12 @@ SHARE_VALUME=shared_go_cache
 gopath=$HOME/go
 localpath=/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$gopath/bin
 
-docker run -it --rm --name golang_fmt \
+docker run -t --rm --name golang_fmt \
     -u $UID:$UID --userns=host \
     --network=host \
     -e GOCACHE=$gopath/go-build \
     -e GOPATH=$gopath \
+    -e GOPROXY=https://mirrors.aliyun.com/goproxy/,direct \
     -e PATH=$localpath \
     -v /etc/localtime:/etc/localtime:ro \
     -v /etc/passwd:/etc/passwd:ro \
