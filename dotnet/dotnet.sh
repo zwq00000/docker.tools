@@ -1,5 +1,6 @@
 #!/bin/bash
-imageName=mcr.microsoft.com/dotnet/core/sdk:3.1
+imageName=$DOTNET_IMAGE
+echo 'start dotnet use '+$imageName
 
 SHARE_VALUME=dotnet_home_for_$USER
 

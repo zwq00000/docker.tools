@@ -3,26 +3,26 @@
 source_path=$(dirname $(readlink -f $0))
 cd $source_path
 
-BIN_PATH=$HOME/bin
+# BIN_PATH=$HOME/bin
 
-if [ -d "$HOME/bin" ] ; then
-    BIN_PATH="$HOME/bin"
-fi
+# if [ -d "$HOME/bin" ] ; then
+#     BIN_PATH="$HOME/bin"
+# fi
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
-    BIN_PATH="$HOME/.local/bin"
-fi
+# # set PATH so it includes user's private bin if it exists
+# if [ -d "$HOME/.local/bin" ] ; then
+#     BIN_PATH="$HOME/.local/bin"
+# fi
 
-# set BIN_PATH so it includes user's private bin if it exists
-if [ -d "/snap/bin" ] ; then
-    BIN_PATH="/snap/bin"
-fi
+# # set BIN_PATH so it includes user's private bin if it exists
+# if [ -d "/snap/bin" ] ; then
+#     BIN_PATH="/snap/bin"
+# fi
 
-if [ "$BIN_PATH" = ""];then
-    echo "make ~/bin"
-    mkdir ~/bin
-fi
+# if [ "$BIN_PATH" = ""];then
+#     echo "make ~/bin"
+#     mkdir ~/bin
+# fi
 
 if [ "$1" = "" ];then
     echo "Usage: install [options] "
