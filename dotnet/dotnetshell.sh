@@ -5,7 +5,6 @@
 imageName=$DOTNET_IMAGE
 echo "use docker image ${imageName}"
 cur_dateTime=`date +%m%d%H%m`
-echo $cur_dateTime
 
 SHARE_VALUME=dotnet_home_for_$USER
 

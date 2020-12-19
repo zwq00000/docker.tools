@@ -1,6 +1,6 @@
 #!/bin/bash
 imageName=$DOTNET_IMAGE
-echo 'start dotnet use '+$imageName
+echo 'start dotnet use '$imageName
 
 SHARE_VALUME=dotnet_home_for_$USER
 
