@@ -3,16 +3,14 @@
 source_path=$(dirname $(readlink -f $0))
 cd $source_path
 
-BIN_PATH=$1
 
-echo ln -s -f `pwd`/php-cli.sh $BIN_PATH/php-cli
-ln -s -f `pwd`/php-cli.sh $BIN_PATH/php-cli
+echo "alias php-cli='export PHP_IMAGE=php:5.6-cli && $PWD/php-cli.sh'" >> ~/.bash_alias
 
-echo ln -s -f `pwd`/php-cli.sh $BIN_PATH/php-5.6
-ln -s -f `pwd`/php-5.6.sh $BIN_PATH/php-5.6
+echo "alias php-5.6='export PHP_IMAGE=php:5.6-cli && $PWD/php-cli.sh'" >> ~/.bash_alias
 
-echo ln -s -f `pwd`/php-cli.sh $BIN_PATH/php-7.1
-ln -s -f `pwd`/php-7.1.sh $BIN_PATH/php-7.1
+echo "alias php-7.1='export PHP_IMAGE=php:7.1-cli && $PWD/php-cli.sh'" >> ~/.bash_alias
 
-echo ln -s -f `pwd`/php-cli.sh $BIN_PATH/php-7.2
-ln -s -f `pwd`/php-7.2.sh $BIN_PATH/php-7.2
+echo "alias php-7.2='export PHP_IMAGE=php:7.2-cli && $PWD/php-cli.sh'" >> ~/.bash_alias
+
+echo "alias php-7.2-fpm='export PHP_IMAGE=php:7.2-fpm && $PWD/php-cli.sh'" >> ~/.bash_alias
+
