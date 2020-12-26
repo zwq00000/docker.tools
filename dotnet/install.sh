@@ -20,14 +20,14 @@ sdk2=microsoft/dotnet:2.2-sdk
 sdk3=mcr.microsoft.com/dotnet/core/sdk:3.1
 sdk5=mcr.microsoft.com/dotnet/sdk:5.0
 
-echo "alias dotnetshell='export DOTNET_IMAGE=$sdk5 && $PWD/dotnetshell.sh'" > ~/.bash_aliases
-echo "alias dotnetshell2='export DOTNET_IMAGE=$sdk2 && $PWD/dotnetshell.sh'" >> ~/.bash_aliases
-echo "alias dotnetshell3='export DOTNET_IMAGE=$sdk3 && $PWD/dotnetshell.sh'" >> ~/.bash_aliases
-echo "alias dotnet2='export DOTNET_IMAGE=$sdk2 && $PWD/dotnet.sh'" >> ~/.bash_aliases
-echo "alias dotnet3='export DOTNET_IMAGE=$sdk3 && $PWD/dotnet.sh'" >> ~/.bash_aliases
-echo "alias dotnet='export DOTNET_IMAGE=$sdk5 && $PWD/dotnet.sh'" >> ~/.bash_aliases
+echo "alias dotnetshell='export DOTNET_IMAGE=$sdk5 && $PWD/dotnetshell.sh'" > ~/.bash_alias
+echo "alias dotnetshell2='export DOTNET_IMAGE=$sdk2 && $PWD/dotnetshell.sh'" >> ~/.bash_alias
+echo "alias dotnetshell3='export DOTNET_IMAGE=$sdk3 && $PWD/dotnetshell.sh'" >> ~/.bash_alias
+echo "alias dotnet2='export DOTNET_IMAGE=$sdk2 && $PWD/dotnet.sh'" >> ~/.bash_alias
+echo "alias dotnet3='export DOTNET_IMAGE=$sdk3 && $PWD/dotnet.sh'" >> ~/.bash_alias
+echo "alias dotnet='export DOTNET_IMAGE=$sdk5 && $PWD/dotnet.sh'" >> ~/.bash_alias
 
-source ~/.bash_aliases
+. ~/.bash_alias
 
 # init docker container and mount volume
 imageName=$sdk5

@@ -26,9 +26,12 @@ source_path=$(dirname $(readlink -f $0))
 cd $source_path
 
 
-echo "alias go='$PWD/go.sh'" >> ~/.bash_aliases
-echo "alias goshell='$PWD/goshell.sh'" >> ~/.bash_aliases
-echo "alias gofmt='$PWD/gofmt.sh'" >> ~/.bash_aliases
+echo "alias go='$PWD/go.sh'" >> ~/.bash_alias
+echo "alias goshell='$PWD/goshell.sh'" >> ~/.bash_alias
+echo "alias gofmt='$PWD/go.sh gofmt'" >> ~/.bash_alias
+echo "alias govendor='$PWD/go.sh govendor'" >> ~/.bash_alias
+
+. ~/.bash_alias
 
 source ~/.bash_aliases
 init
