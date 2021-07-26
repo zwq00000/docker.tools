@@ -33,4 +33,5 @@ echo "alias govendor='$PWD/go.sh govendor'" >> ~/.bash_alias
 
 . ~/.bash_alias
 
+source ~/.bash_aliases
 init
