@@ -31,14 +31,16 @@ init()
     # Create User Profile Volume
     docker volume create $SHARE_VALUME
     
-    docker run  --rm --userns=host \
+    docker run -it --rm --userns=host \
     -e HOME=$HOME \
     -v $SHARE_VALUME:$HOME  \
-    $imageName chown -R $UID:$UID $HOME/
+    -v `pwd`/init.sh:$HOME/init.sh \
+    -w $HOME \
+    $imageName ~/init.sh $UID
 }
 
 if  [ "$1" = "init" ];then
-    echo 'init ${imageName} env '
+    echo "init ${imageName} env "
     init
 else
     start $*
