@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$1"="" ];then
+if [ "$#" -ne 1 ]; then
     echo "dotnet tools (dotnet-counters , dotnet-trace , dotnet-dump) for docker"
     echo "USAGE: dotnet-tools <container id|name>"
     docker ps | grep dotnet
