@@ -1,7 +1,8 @@
 #!/bin/bash
+# dotnet tools counters sidecar
 
 if [[ $# -lt 1 ]]; then
-    echo "dotnet counters for docker"
+    echo "dotnet counters for docker sidecar"
     echo "USAGE: dotnet-counters <container id|name>"
     docker ps | grep dotnet
     exit

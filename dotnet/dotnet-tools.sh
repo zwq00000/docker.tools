@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ $# -lt 1 ]]; then
-    echo "dotnet tools (dotnet-counters , dotnet-trace , dotnet-dump) for docker"
+    echo "dotnet tools (dotnet-counters , dotnet-trace , dotnet-dump) for docker sidecar"
     echo "USAGE: dotnet-tools <container id|name>"
     docker ps | grep dotnet
     exit
