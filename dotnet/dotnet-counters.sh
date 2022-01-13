@@ -12,7 +12,7 @@ shift
 merged=`docker inspect --format="{{.GraphDriver.Data.MergedDir}}" $containerId`
 
 docker run --rm -it \
---pid=container:$1 \
+--pid=container:$containerId \
 -v $merged/tmp:/tmp \
 -w `pwd`:`pwd` \
 zwq00000/dotnet-tools dotnet-counters @*
