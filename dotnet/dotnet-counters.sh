@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$#" -ne 1 ]; then
+if [[ $# -lt 1 ]]; then
     echo "dotnet counters for docker"
     echo "USAGE: dotnet-counters <container id|name>"
     docker ps | grep dotnet
