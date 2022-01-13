@@ -15,6 +15,6 @@ docker run --rm -it \
 --pid=container:$containerId \
 -v $merged/tmp:/tmp \
 -w `pwd`:`pwd` \
-zwq00000/dotnet-tools dotnet-counters @*
+zwq00000/dotnet-tools dotnet-counters $*
 
 
