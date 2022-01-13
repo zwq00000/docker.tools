@@ -1,4 +1,5 @@
 # ignore start with '_'
 _*
 .npm
-.devcontainer
+.devcontainer/
+.vscode/

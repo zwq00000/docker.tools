@@ -1,8 +1,8 @@
 #!/bin/bash
 
 if [ "$1"="" ];then
-    echo "dotnet tools (dotnet-counters , dotnet-trace , dotnet-dump) for docker"
-    echo "USAGE: dotnet-tools <container id|name>"
+    echo "dotnet counters for docker"
+    echo "USAGE: dotnet-counters <container id|name>"
     docker ps | grep dotnet
     exit
 fi
@@ -15,6 +15,6 @@ docker run --rm -it \
 --pid=container:$1 \
 -v $merged/tmp:/tmp \
 -w `pwd`:`pwd` \
-zwq00000/dotnet-tools @*
+zwq00000/dotnet-tools dotnet-counters @*
 
 
