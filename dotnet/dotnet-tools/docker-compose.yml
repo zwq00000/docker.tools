@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  dotnet-tools:
+    image: zwq00000/dotnet-tools
+    build:
+      context: .
+      dockerfile: ./Dockerfile

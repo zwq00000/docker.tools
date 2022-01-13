@@ -27,7 +27,7 @@ echo "alias dotnet2='export DOTNET_IMAGE=$sdk2 && $PWD/dotnet.sh'" >> ~/.bash_al
 echo "alias dotnet3='export DOTNET_IMAGE=$sdk3 && $PWD/dotnet.sh'" >> ~/.bash_alias
 echo "alias dotnet='export DOTNET_IMAGE=$sdk5 && $PWD/dotnet.sh'" >> ~/.bash_alias
 
-. ~/.bash_alias
+source ~/.bash_alias
 
 # init docker container and mount volume
 imageName=$sdk5

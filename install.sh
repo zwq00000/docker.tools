@@ -24,3 +24,11 @@ fi
 if  [ "$1" = "php" ];then
     ./php/install.sh
 fi
+
+if  [ "$1" = "python" ];then
+    ./python/install.sh
+fi 
+
+if [ "$1" = "tools" ];then
+    ./tools/install.sh
+fi
