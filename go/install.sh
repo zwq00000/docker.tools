@@ -25,7 +25,7 @@ init()
 source_path=$(dirname $(readlink -f $0))
 cd $source_path
 
-
+sed -i -e "/alias go/d" ~/.bash_alias
 echo "alias go='$PWD/go.sh'" >> ~/.bash_alias
 echo "alias goshell='$PWD/goshell.sh'" >> ~/.bash_alias
 echo "alias gofmt='$PWD/go.sh gofmt'" >> ~/.bash_alias

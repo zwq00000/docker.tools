@@ -3,29 +3,27 @@
 source_path=$(dirname $(readlink -f $0))
 cd $source_path
 
-# BIN_PATH=$1
-
-# echo ln -s -f `pwd`/dotnetshell.sh $BIN_PATH/dotnetshell 
-# ln -s -f `pwd`/dotnetshell.sh $BIN_PATH/dotnetshell 
-
-# echo ln -s -f `pwd`/dotnetshell2.2.sh $BIN_PATH/dotnetshell2.2 
-# ln -s -f `pwd`/dotnetshell2.2.sh $BIN_PATH/dotnetshell2.2 
-
-# echo ln -s -f `pwd`/dotnetshell3.sh $BIN_PATH/dotnetshell3 
-# ln -s -f `pwd`/dotnetshell3.sh $BIN_PATH/dotnetshell3 
-
-# echo ln -s -f `pwd`/dotnet.sh $BIN_PATH/dotnet 
-# ln -s -f `pwd`/dotnet.sh $BIN_PATH/dotnet 
 sdk2=microsoft/dotnet:2.2-sdk
 sdk3=mcr.microsoft.com/dotnet/core/sdk:3.1
 sdk5=mcr.microsoft.com/dotnet/sdk:5.0
+sdk6=mcr.microsoft.com/dotnet/sdk:6.0
 
-echo "alias dotnetshell='export DOTNET_IMAGE=$sdk5 && $PWD/dotnetshell.sh'" > ~/.bash_alias
-echo "alias dotnetshell2='export DOTNET_IMAGE=$sdk2 && $PWD/dotnetshell.sh'" >> ~/.bash_alias
-echo "alias dotnetshell3='export DOTNET_IMAGE=$sdk3 && $PWD/dotnetshell.sh'" >> ~/.bash_alias
-echo "alias dotnet2='export DOTNET_IMAGE=$sdk2 && $PWD/dotnet.sh'" >> ~/.bash_alias
-echo "alias dotnet3='export DOTNET_IMAGE=$sdk3 && $PWD/dotnet.sh'" >> ~/.bash_alias
-echo "alias dotnet='export DOTNET_IMAGE=$sdk5 && $PWD/dotnet.sh'" >> ~/.bash_alias
+sed -i -e "/alias dotnet/d" ~/.bash_alias
+echo "alias dotnetshell='export DOTNET_SDK=$sdk5 && $PWD/dotnetshell.sh'" >> ~/.bash_alias
+echo "alias dotnet='export DOTNET_SDK=$sdk5 && $PWD/dotnet.sh'" >> ~/.bash_alias
+
+echo "alias dotnetshell2='export DOTNET_SDK=$sdk2 && $PWD/dotnetshell.sh'" >> ~/.bash_alias
+echo "alias dotnetshell3='export DOTNET_SDK=$sdk3 && $PWD/dotnetshell.sh'" >> ~/.bash_alias
+echo "alias dotnetshell5='export DOTNET_SDK=$sdk5 && $PWD/dotnetshell.sh'" >> ~/.bash_alias
+echo "alias dotnetshell6='export DOTNET_SDK=$sdk6 && $PWD/dotnetshell.sh'" >> ~/.bash_alias
+echo "alias dotnet2='export DOTNET_SDK=$sdk2 && $PWD/dotnet.sh'" >> ~/.bash_alias
+echo "alias dotnet3='export DOTNET_SDK=$sdk3 && $PWD/dotnet.sh'" >> ~/.bash_alias
+echo "alias dotnet5='export DOTNET_SDK=$sdk5 && $PWD/dotnet.sh'" >> ~/.bash_alias
+echo "alias dotnet6='export DOTNET_SDK=$sdk6 && $PWD/dotnet.sh'" >> ~/.bash_alias
+
+
+echo "alias dotnet-tools='$PWD/dotnet-tools.sh'" >> ~/.bash_alias
+echo "alias dotnet-counters='$PWD/dotnet-counters.sh'" >> ~/.bash_alias
 
 source ~/.bash_alias
 

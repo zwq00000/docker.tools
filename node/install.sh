@@ -3,6 +3,7 @@
 source_path=$(dirname $(readlink -f $0))
 cd $source_path
 
+sed -i -e "/alias node/d" ~/.bash_alias
 echo "alias nodeenv='$PWD/nodeenv.sh'" >> ~/.bash_alias
 echo "alias nodejs='$PWD/nodejs.sh'" >> ~/.bash_alias
 echo "alias node='$PWD/node.sh'" >> ~/.bash_alias

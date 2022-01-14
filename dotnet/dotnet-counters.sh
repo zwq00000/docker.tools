@@ -15,6 +15,7 @@ merged=`docker inspect --format="{{.GraphDriver.Data.MergedDir}}" $containerId`
 docker run --rm -it \
 --pid=container:$containerId \
 -v $merged/tmp:/tmp \
+-v `pwd`:`pwd` \
 -w `pwd`:`pwd` \
 zwq00000/dotnet-tools dotnet-counters $*
 

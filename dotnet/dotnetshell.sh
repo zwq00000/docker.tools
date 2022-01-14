@@ -2,7 +2,12 @@
 ###################
 ##  dotnet sdk env
 ###################
-imageName=$DOTNET_IMAGE
+
+if [[ $DOTNET_SDK="" ]];then
+    # 默认 dotnet sdk sdk5.0
+    DOTNET_SDK='mcr.microsoft.com/dotnet/sdk:5.0'
+fi
+imageName=$DOTNET_SDK
 echo "use docker image ${imageName}"
 cur_dateTime=`date +%m%d%H%m`
 
