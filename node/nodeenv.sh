@@ -30,11 +30,12 @@ init()
 {
     # Create User Profile Volume
     docker volume create $SHARE_VALUME
+    source_path=$(dirname $(readlink -f $0))
     
     docker run -it --rm --userns=host \
     -e HOME=$HOME \
     -v $SHARE_VALUME:$HOME  \
-    -v `pwd`/init.sh:$HOME/init.sh \
+    -v $source_path/init.sh:$HOME/init.sh:ro \
     -w $HOME \
     $imageName ~/init.sh $UID
 }
