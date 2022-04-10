@@ -1,6 +1,7 @@
 #!/bin/bash
 
-imageName=library/node:12
+source_path=$(dirname $(readlink -f $0))
+imageName=library/node:16
 echo "Use docker image ${imageName}"
 
 #first runtime use npm config set prefix "$HOME/.npm/global"
@@ -34,9 +35,10 @@ init()
     docker run -it --rm --userns=host \
     -e HOME=$HOME \
     -v $SHARE_VALUME:$HOME  \
-    -v `pwd`/init.sh:$HOME/init.sh \
+    -v $source_path/init.sh:$HOME/init.sh \
     -w $HOME \
-    $imageName ~/init.sh $UID
+    $imageName /bin/bash
+    # ~/init.sh $UID
 }
 
 if  [ "$1" = "init" ];then

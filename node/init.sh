@@ -1,22 +1,33 @@
 #!/bin/bash
 
-UID=$1
-echo UID $1
+cd ~/
+UserId=$1
+echo UID $UserId
 
-chown -R $UID:$UID ~/
+# chown -R $UserId:$UserId ~/
 
-if [[ ! -d ~/.npm ]] 
-then
-    mkdir ~/.npm    
-fi
+files=('~/.npmrc' '~/.yarnrc')
 
-if [[ ! -d ~/.npm/global ]] 
-then
-    mkdir ~/.npm/global
-fi
+for file in ${files[@]}
+do
+    echo touch $file
+    if [ ! -f $file ];then
+        touch $file
+    fi
+    chown $UserId:$UserId $file
+done
 
-chown -R $UID:$UID ~/.npm 
+folders=('~/.npm' '~/.npm/global' '~/.config/yarn')
 
-npm config set prefix $HOME/.npm/global 
-npm config set registry https://registry.npm.taobao.org 
+for folder in ${folders[@]}
+do
+    echo check folder $folder
+    if [ ! -d $folder ];then
+        mkdir $folder
+    fi
+    chown -R $UserId:$UserId $folder
+done
+
+npm config set prefix $HOME/.npm/global
+npm config set registry https://registry.npm.taobao.org
 ls -lha

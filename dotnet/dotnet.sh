@@ -1,7 +1,8 @@
 #!/bin/bash
-if [[ $DOTNET_SDK="" ]];then
+if [ -z "${DOTNET_SDK}" ];then
     # 默认 dotnet sdk sdk5.0
-    DOTNET_SDK='mcr.microsoft.com/dotnet/sdk:5.0'
+    DOTNET_SDK='mcr.microsoft.com/dotnet/sdk:6.0'
+    echo "SET DOTNET_SDK $DOTNET_SDK"
 fi
 
 imageName=$DOTNET_SDK
