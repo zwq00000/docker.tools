@@ -6,7 +6,7 @@ cd $source_path
 if [ "$1" = "" ];then
     echo "Usage: install [options] "
     echo "  Install docker tool  options "
-    echo "  options = go,node,dotnet,php "
+    echo "  options = go,node,dotnet,php,mqtt "
 fi
 
 if  [ "$1" = "go" ];then
@@ -31,4 +31,8 @@ fi
 
 if [ "$1" = "tools" ];then
     ./tools/install.sh
+fi
+
+if [ "$1" = "mqtt" ];then
+    ./mqtt/install.sh
 fi
