@@ -8,6 +8,8 @@ fi
 
 volname=$1
 
+tag=$(date +"%Y%m%d")
+
 if test "$(docker volume inspect $volname -f '{{.Name}}' 2>/dev/null)" = ""  
 then
     echo "卷 ${volname} 不存在"
@@ -20,7 +22,7 @@ else
         -w /volumes/$volname \
         busybox \
         sh -c "du -sh /volumes/$volname &&
-        tar -zcvf /backup/$volname.tar.gz ."
+        tar -zcvf /backup/${volname}.${tag}.tar.gz ."
 fi
 
 
