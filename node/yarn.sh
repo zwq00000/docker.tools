@@ -1,6 +1,6 @@
 #!/bin/bash
 ## user ~/.npmrc and ~/.npm folder
-imageName=library/node:16
+imageName=library/node:17
 echo "Entry docker container ${imageName}"
 localpath=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/.npm/global/bin
 

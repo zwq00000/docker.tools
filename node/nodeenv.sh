@@ -1,7 +1,7 @@
 #!/bin/bash
 
 source_path=$(dirname $(readlink -f $0))
-imageName=library/node:16
+imageName=library/node:17
 echo "Use docker image ${imageName}"
 
 #first runtime use npm config set prefix "$HOME/.npm/global"
